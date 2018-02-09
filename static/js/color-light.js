@@ -66,58 +66,20 @@ function ColorLight(description, format) {
 ColorLight.prototype = Object.create(OnOffSwitch.prototype);
 
 ColorLight.prototype.iconView = function() {
-  let colorStyle = '';
-  if (this.properties.on) {
-    colorStyle = `background: ${this.properties.color}`;
-  }
-  return `<div class="color-light" style="${colorStyle}">
+  return `<div class="color-light">
     <div class="color-light-icon">
-      <svg
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:cc="http://creativecommons.org/ns#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns="http://www.w3.org/2000/svg"
-         version="1.1"
-         viewBox="0 0 64 66"
-         height="66"
-         width="64">
-        <defs
-           id="defs16980" />
-        <metadata
-           id="metadata16983">
-          <rdf:RDF>
-            <cc:Work
-               rdf:about="">
-              <dc:format>image/svg+xml</dc:format>
-              <dc:type
-                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-              <dc:title></dc:title>
-            </cc:Work>
-          </rdf:RDF>
-        </metadata>
-        <g transform="translate(0,-987.36216)">
-          <path
-             d="m 41.6997,1041.6985 c 0,1.0723 -0.8727,1.9367 -1.9366,1.9367 l
-             -15.5179,0 c -1.0722,0 -1.9366,-0.8727 -1.9366,-1.9367 0,-1.0722
-             0.8727,-1.9366 1.9366,-1.9366 l 15.5179,0 c 1.0639,-0.01
-             1.9366,0.8644 1.9366,1.9366 z m -1.9449,2.9091 -15.5096,0 c
-             -1.28,0 -2.2608,1.2302 -1.8369,2.5683 0.2577,0.8063 1.0722,1.305
-             1.92,1.305 l 0.033,0 c 1.1221,0 2.1444,0.6317 2.6431,1.6374 l
-             0.017,0.041 c 0.6732,1.3465 2.053,2.2026 3.5657,2.2026 l 2.826,0 c
-             1.5127,0 2.8925,-0.8561 3.5657,-2.2026 l 0.017,-0.041 c
-             0.4987,-1.0057 1.5294,-1.6374 2.6432,-1.6374 l 0.033,0 c 0.8478,0
-             1.6623,-0.4987 1.92,-1.305 0.4322,-1.3381 -0.5569,-2.5683
-             -1.8369,-2.5683 z m 1.9449,-7.7631 c 0,1.0722 -0.8727,1.9366
-             -1.9366,1.9366 l -15.5179,0 c -1.0722,0 -1.9366,-0.8727
-             -1.9366,-1.9366 0,-1.0306 0.8062,-1.8701 1.8285,-1.9283
-             -1.2135,-10.9132 -12.5008,-13.3403 -12.5008,-26.19 0,-11.24577
-             9.118,-20.36377 20.3637,-20.36377 11.2457,0 20.3637,9.118
-             20.3637,20.36377 0,12.8497 -11.2873,15.2768 -12.4925,26.19
-             1.014,0.058 1.8285,0.8977 1.8285,1.9283 z"
-             class="color-light-icon-path"/>
+    <svg width="66" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+      <g>
+        <g>
+          <path fill="currentColor" d="m256,92.3c-74.2,0-127.8,55.3-136.3,114.7-5.3,39.6 7.5,78.2 34.1,107.4 23.4,25 36.2,58.4 36.2,92.8l-.1,54.2c0,21.9 18.1,39.6 40.5,39.6h52.2c22.4,0 40.5-17.7 40.5-39.6l.1-54.2c0-35.4 11.7-67.8 34.1-90.7 24.5-25 37.3-57.3 37.3-90.7-0.1-74.1-63-133.5-138.6-133.5zm46.8,369.1c0,10.4-8.5,18.8-19.2,18.8h-52.2c-10.7,0-19.2-8.3-19.2-18.8v-24h90.5v24zm39.6-159.5c-26.6,27.1-40.5,64.6-40.5,105.3v9.4h-90.5v-9.4c0-38.6-16-77.1-42.6-106.3-23.4-25-33-57.3-28.8-90.7 7.5-50 54-97 116.1-97 65,0 117.2,51.1 117.2,112.6 0,28.1-10.7,55.2-30.9,76.1z"/>
+          <rect fill="currentColor" width="21.3" x="245.3" y="11" height="50"/>
+          <polygon fill="currentColor" points="385.1,107.4 400,122.3 436.5,87.2 421.5,72.3   "/>
+          <rect fill="currentColor" width="52.2" x="448.8" y="236.2" height="20.9"/>
+          <rect fill="currentColor" width="52.2" x="11" y="236.2" height="20.9"/>
+          <polygon fill="currentColor" points="90.1,72.2 75.1,87.1 111.6,122.2 126.5,107.3   "/>
         </g>
-      </svg>
+      </g>
+    </svg>
       <div class="color-light-label">
         ON
       </div>
@@ -130,7 +92,9 @@ ColorLight.prototype.iconView = function() {
  */
 ColorLight.prototype.htmlView = function() {
   return `<div class="thing ${this.thingCssClass}">
-    <a href="${this.href}" class="thing-details-link"></a>
+    <a href="${this.href}" class="thing-details-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+    </a>
     ${this.iconView()}
     <span class="thing-name">${this.name}</span>
   </div>`;
@@ -203,8 +167,6 @@ ColorLight.prototype.updateOn = function(on) {
   if (this.details) {
     this.details.on.update();
   }
-
-  this.colorLight.style.background = on ? 'white' : '';
 
   if (on) {
     this.showOn();

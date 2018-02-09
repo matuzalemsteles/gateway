@@ -2,12 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
- @media only screen and (max-width: 730px) {
-   #things-view {
-     background: #5d9bc7;
-   }
- }
-
 #things-view {
   height: 100%;
   overflow: auto;
@@ -29,5 +23,7 @@
 #add-button {
   bottom: 2rem;
   right: 2rem;
-  background-image: url('../images/add.svg');
+  color: #fff;
+  background-color: #03AE5A;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06), 0 2px 32px rgba(0,0,0,.16);
 }

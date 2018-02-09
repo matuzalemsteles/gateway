@@ -79,7 +79,9 @@ MultiLevelSwitch.prototype.iconView = function() {
  */
 MultiLevelSwitch.prototype.htmlView = function() {
   return `<div class="thing ${this.thingCssClass}">
-    <a href="${this.href}" class="thing-details-link"></a>
+    <a href="${this.href}" class="thing-details-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+    </a>
     ${this.iconView()}
     <span class="thing-name">${this.name}</span>
   </div>`;
@@ -175,10 +177,6 @@ MultiLevelSwitch.prototype.updateLevel = function(level) {
     blank = MULTI_LEVEL_SWITCH_ON_BLANK;
   }
 
-  let levelBackground = `linear-gradient(${blank}, ${blank} ${100 - level}%,` +
-                              `${bar} ${100 - level}%, ${bar})`;
-  this.levelBar.style.background = levelBackground;
-
   if (this.properties.on) {
     this.levelBarLabel.textContent = `${Math.round(level)}%`;
   }
@@ -212,4 +210,3 @@ MultiLevelSwitch.prototype.setLevel = function(level) {
    console.error('Error trying to set level: ' + error);
   });
 };
-

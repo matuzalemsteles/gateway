@@ -101,7 +101,10 @@ SmartPlug.prototype = Object.create(OnOffSwitch.prototype);
 
 SmartPlug.prototype.iconView = function() {
   return `<div class="thing-icon">
-    <span class="smart-plug-label">...</span>
+      <div>
+        <svg version="1.1" width="66" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path fill="currentColor" d="M336,74h-5V15c0-8.284-6.716-15-15-15s-15,6.716-15,15v59h-90V15c0-8.284-6.716-15-15-15s-15,6.716-15,15v59h-5 c-24.813,0-45,20.187-45,45v160c0,24.813,20.187,45,45,45h30v173c0,8.284,6.716,15,15,15h70c8.284,0,15-6.716,15-15V324h30 c24.813,0,45-20.187,45-45V119C381,94.187,360.813,74,336,74z M276,482h-40V324h40V482z M351,279c0,8.271-6.729,15-15,15 c-5.853,0-150.79,0-160,0c-8.271,0-15-6.729-15-15V119c0-8.271,6.729-15,15-15c1.515,0,158.57,0,160,0c8.271,0,15,6.729,15,15V279 z"/></g></g><g><g><path fill="currentColor" d="M306,235H206c-8.284,0-15,6.716-15,15s6.716,15,15,15h100c8.284,0,15-6.716,15-15S314.284,235,306,235z"/></g></g></svg>
+        <span class="smart-plug-label">...</span>
+      </div>
     </div>`;
 };
 
@@ -110,7 +113,9 @@ SmartPlug.prototype.iconView = function() {
  */
 SmartPlug.prototype.htmlView = function() {
   return `<div class="thing smart-plug">
-    <a href="${this.href}" class="thing-details-link"></a>
+    <a href="${this.href}" class="thing-details-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+    </a>
     ${this.iconView()}
     <span class="thing-name">${this.name}</span>
   </div>`
